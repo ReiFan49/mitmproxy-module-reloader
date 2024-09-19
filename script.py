@@ -39,6 +39,7 @@ class Reloader:
       )
     )
     for module in reloadable:
+      log.debug('Reloading %s', module.__name__)
       importlib.reload(module)
     if reloadable:
       log.info('Reloaded %d module(s).', len(reloadable))
